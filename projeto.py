@@ -81,7 +81,7 @@ label_codigo = tk.Label(janela,text='Código da Amostra')
 label_codigo.grid(row=4,column=0,padx=10,pady=10)
 
 
-#ENTRADS
+#ENTRADAS
 nome_entry = tk.Entry(janela, width=35)
 nome_entry.grid(row=0,column=2,padx=10,pady=10)
 
@@ -101,14 +101,12 @@ codigo_entry.grid(row=4,column=2,padx=10,pady=10)
 # Botão Cadastrar
 
 botao_cadastrar = tk.Button(text='Cadastrar Amostra de Rochas',command=cadastrar_rochas)
-botao_cadastrar.grid(row=7, column=0, columnspan=2, padx=10, pady=10, ipadx= 80)
+botao_cadastrar.grid(row=7, column=2, columnspan=2, padx=10, pady=10, ipadx= 80)
 
 # Botão Exportar
 
-botao_exportar = tk.Button(text='exportar dados', command=exportar_dados)
-botao_exportar.grid(row=8, column=0, columnspan=2, padx=10, pady=10, ipadx= 80)
-
-
+botao_exportar = tk.Button(text='Exportar Dados', command=exportar_dados)
+botao_exportar.grid(row=8, column=2, columnspan=2, padx=10, pady=10, ipadx= 80)
 
 
 janela.mainloop()
