@@ -2,25 +2,44 @@ import tkinter as tk
 import sqlite3
 import pandas as pd
 
+#Banco de Dados
+
+# conexao = sqlite3.connect('banco_dados_rochas.db')
+
+# c = conexao.cursor()
+
+# c.execute("""CREATE TABLE banco_dados_rochas (
+#    nome text,
+#    minerais text,
+#    local text,
+#    coordenadas text,
+#   codigo)""")
+
+# conexao.commit()
+
+# conexao.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# JANELA
 janela = tk.Tk()
 janela.title("Cadastro de Rochas")
 janela.geometry('330x350')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #ROTULOS
@@ -58,4 +77,3 @@ codigo_entry.grid(row=4,column=2,padx=10,pady=10)
 
 
 
-janela.mainloop()
