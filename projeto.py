@@ -43,22 +43,18 @@ def cadastrar_rochas():
     codigo_entry.delete(0,"end")
 
 
+def exportar_dados():
+    conexao = sqlite3.connect('banco_dados_rochas.db')
+    c = conexao.cursor()
 
+    c.execute("SELECT *, oid FROM banco_dados_rochas")
+    rochas_cadastradas = c.fetchall()
 
+    rochas_cadastradas = pd.DataFrame(rochas_cadastradas,columns=['nome','minerais','local','coordenadas','codigo','Id'])
+    rochas_cadastradas.to_excel('banco_dados_rochas.xlsx')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    conexao.commit()
+    conexao.close()
 
 
 
@@ -102,4 +98,15 @@ codigo_entry = tk.Entry(janela,width=35)
 codigo_entry.grid(row=4,column=2,padx=10,pady=10)
 
 
+# Botão Cadastrar
 
+botao_cadastrar = tk.Button(text='Cadastrar Amostra de Rochas',command=cadastrar_rochas)
+botao_cadastrar.grid(row=7, column=0, columnspan=2, padx=10, pady=10, ipadx= 80)
+
+# Botão Exportar
+
+botao_exportar = tk.Button(text='exportar dados', command=exportar_dados)
+botao_exportar.grid(row=8, column=0, columnspan=2, padx=10, pady=10, ipadx= 80)
+
+
+janela.mainloop()
