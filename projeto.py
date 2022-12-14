@@ -109,4 +109,6 @@ botao_exportar = tk.Button(text='exportar dados', command=exportar_dados)
 botao_exportar.grid(row=8, column=0, columnspan=2, padx=10, pady=10, ipadx= 80)
 
 
+
+
 janela.mainloop()
