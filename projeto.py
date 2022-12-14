@@ -19,6 +19,32 @@ import pandas as pd
 
 # conexao.close()
 
+def cadastrar_rochas():
+    conexao = sqlite3.connect('banco_dados_rochas.db')
+    c = conexao.cursor()
+
+    c.execute("INSERT INTO banco_dados_rochas VALUES (:nome, :minerais, :local, :coordenadas, :codigo)",
+              {
+                  'nome': nome_entry.get(),
+                  'minerais': modaMineral_entry.get(),
+                  'local': local_entry.get(),
+                  'coordenadas': coordenadas_entry.get(),
+                  'codigo': codigo_entry.get()
+              })
+
+    conexao.commit()
+    conexao.close()
+
+    # apaga os valores da caixa de entrada
+    nome_entry.delete(0,"end")
+    modaMineral_entry.delete(0,"end")
+    local_entry.delete(0,"end")
+    coordenadas_entry.delete(0,"end")
+    codigo_entry.delete(0,"end")
+
+
+
+
 
 
 
